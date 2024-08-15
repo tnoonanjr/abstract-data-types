@@ -1,49 +1,48 @@
-##################
-##################          WORK IN PROGRESS
-##################
 class TreeNode:
     ''' 
 
-    Each node in a binary tree has to initialize three instance variables:
+    Each node in a binary tree has to initialize **three instance variables**:
         - its value
         - the node to its left 
         - the node to its right
 
-                  
-    To include the height of a node, you can recursively call the height of 
+        
+    I decided to give my TreeNode a **string representation**. This is not 
+    necessarily required but it is helpful for testing.
+
+                       
+    To include the **height** of a node, you can recursively call the height of 
     the node's children with the base case that its child is none. If a 
     child is None, its height is considered -1. The function returns 1 plus 
     the maximum height of the children, representing the height of the 
     current node's subtree.
 
 
-    In pre-order traversal:
-        - Visit the current node.
+    In **pre-order** traversal:
+        - **Visit the current node.**
         - Recursively traverse the current node's left subtree.
         - Recursively traverse the current node's right subtree.
 
 
-    In in-order traversal:
+    In **in-order** traversal:
         - Recursively traverse the current node's left subtree.
-        - Visit the current node.
+        - **Visit the current node.**
         - Recursively traverse the current node's right subtree.
 
         
-    In post-order traversal: 
+    In **post-order** traversal: 
         - Recursively traverse the current node's left subtree.
         - Recursively traverse the current node's right subtree.
-        - Visit the current node.
+        - **Visit the current node.**
         
     '''
     def __init__(self, key):
-        ''' Initialize the three main pieces of information '''
         self.key = key
         self.left = None
         self.right = None
 
     def __repr__(self):
-        ''' Give the object a representation '''
-        return f"key: {self.key} Left: {self.left} Right: {self.right}"
+        return f"Key: {self.key} Left: {self.left} Right: {self.right}"
 
     def height(self):
         if self is None:

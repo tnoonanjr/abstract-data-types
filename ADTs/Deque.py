@@ -7,7 +7,7 @@ class Deque:
         - An empty list in which items will be pushed.
 
         
-    The length method will simply return length of the instance variable.
+    The length method simply returns length of the instance variable.
 
     
     To ensure the deque is not empty:

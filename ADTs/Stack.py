@@ -8,7 +8,7 @@ class Stack:
         - A private length variable that will be manually updated.
 
 
-    The length method will simply return length of the instance variable.
+    The length method simply returns length of the instance variable.
 
 
     To ensure the stack is not empty:
@@ -33,6 +33,9 @@ class Stack:
 
     def __len__(self):
         return len(self._L)
+    
+    def is_empty(self):
+        return len(self._L) == 0
 
     def push(self, item):
         self._L.append(item)
@@ -46,9 +49,6 @@ class Stack:
         if self.is_empty():
             raise IndexError("You cannot peek into an empty stack")
         return self._L[-1]
-
-    def is_empty(self):
-        return len(self._L) == 0
 
 
 
