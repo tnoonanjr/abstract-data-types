@@ -1,30 +1,32 @@
 class Stack:
   ''' 
-  The stack data type is LIFO: last in, first out.
-  
-  Stacks initialize with two instance variables:
-    - An empty list in which items will be pushed.
-    - A private length variable that will be manually updated.
+	The stack data type is LIFO: last in, first out.
 
-        
-  The length method will simply return length of the instance variable.
+   
+	Stacks initialize with two instance variables:
+		- An empty list in which items will be pushed.
+		- A private length variable that will be manually updated.
 
-    
-  To ensure the stack is not empty:
-    - Return a boolean indicating if the length is 0.
 
-          
-  To push to the **end** of the stack:
-    - Insert a new item at the back of the list.
+	The length method will simply return length of the instance variable.
 
-        
-  To pop from the **beginning** of the stack:
-    - Pop an item from the front of the list.
 
-           
-  To peek at the item in the front of the stack:
-    - Ensure the stack is not empty.
-    - Return the item at the front of the list. 
+	To ensure the stack is not empty:
+		- Return a boolean indicating if the length is 0.
+
+
+	To push to the **end** of the stack:
+		- Insert a new item at the back of the list.
+
+
+	To pop from the **beginning** of the stack:
+		- Pop an item from the front of the list.
+
+
+	To peek at the item in the front of the stack:
+		- Ensure the stack is not empty.
+		- Return the item at the front of the list.
+       
   '''
   def __init__(self):
     self._L = []
