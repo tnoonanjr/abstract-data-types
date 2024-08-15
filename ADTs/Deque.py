@@ -11,30 +11,30 @@ class Deque:
 
     
     To ensure the deque is not empty:
-        - Return a boolean indicating if the length is 0.
+        - Return a boolean indicating if the length is 0
 
 
     To push to the **beginning** of the deque:
-        - Insert a new item at the front of the list.
+        - Insert a new item at the front of the list
     
         
     To push to the **end** of the deque:
-        - Insert a new item at the back of the list.
+        - Insert a new item at the back of the list
 
         
     To pop from the **beginning** of the deque:
-        - If the deque is empty, return None. Otherwise:
-        - Pop an item from the front of the list.
+        - Ensure the instance is not empty
+        - Pop an item from the front of the list
 
         
     To pop from the **end** of the deque:
-        - If the deque is empty, return None. Otherwise:
-        - Pop an item from the back of the list.
+        - Ensure the instance is not empty
+        - Pop an item from the back of the list
     
         
     To peek at the item in the front of the deque:
-        - Ensure the deque is not empty.
-        - Return the item at the front of the list.
+        - If the instance is not empty return None
+        - Return the item at the front of the list
 
     
     '''
@@ -54,19 +54,20 @@ class Deque:
         self._L.append(item)
     
     def pop_front(self):
-        if not self.is_empty():
-            return self._L.pop()
-        return None
+        if self.is_empty():
+            return IndexError("Cannot pop from empty Queue")
+        return self._L.pop()   
     
     def pop_last(self):
-        if not self.is_empty():
-            return self._L.pop(0)
-        return None
+        if self.is_empty():
+            return IndexError("Cannot pop from empty Queue")
+        return self._L.pop(0)
     
     def peek(self):
-        if not self.is_empty():
-            return self._L[0]
-        return None
+        if self.is_empty():
+            return None
+        return self._L[0]
+        
     
     
 
@@ -85,4 +86,3 @@ if __name__ == '__main__':
     print(f"Deque size: {deque._len}")  
     print(f"Removing Front: {deque.pop_front()}")  
     print(f"Removing Rear item: {deque.pop_last()}")    
-    

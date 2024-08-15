@@ -1,32 +1,32 @@
 class Queue:
     ''' 
     The Queue abstract data type is FIFO: first in, first out. It will 
-    push items to the end and pop them from the front.
+    push items to the end and pop them from the front
 
     
     Queues initialize with one instance variable:
-        - An empty list in which items will be pushed.
+        - An empty list in which items will be pushed
 
         
-    The length method simply returns length of the instance variable.
+    The length method simply returns length of the instance variable
 
     
     To ensure the deque is not empty:
-        - Return a boolean indicating if the length is 0.
+        - Return a boolean indicating if the length is 0
 
           
     To push to the **end** of the queue:
-        - Insert a new item at the back of the list.
+        - Insert a new item at the back of the list
 
         
     To pop from the **beginning** of the queue:
-        - If the queue is empty, return None. Otherwise:
-        - Pop an item from the front of the list.
+        - Ensure the instance is not empty
+        - Pop an item from the front of the list
 
            
     To peek at the item in the front of the queue:
-        - Ensure the queue is not empty.
-        - Return the item at the front of the list. 
+        - If the instance is empty return None
+        - Return the item at the front of the list
 
     '''
     def __init__(self):
@@ -42,14 +42,15 @@ class Queue:
         self._L.append(item)
     
     def pop(self):
-        if not self.is_empty():
-            return self._L.pop(0)
-        return None
-    
+        if self.is_empty():
+            return IndexError("Cannot pop from empty Queue")
+        return self._L.pop(0)
+          
     def peek(self):
-        if not self.is_empty():
-            return self._L[0]
-        return None
+        if self.is_empty():
+            return None
+        return self._L[0]
+               
     
     
     

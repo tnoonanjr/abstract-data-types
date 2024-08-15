@@ -24,7 +24,7 @@ class Stack:
 
 
     To peek at the item in the front of the stack:
-        - Ensure the stack is not empty.
+        - If the instance is not empty return None
         - Return the item at the front of the list.
         
     '''
@@ -41,13 +41,14 @@ class Stack:
         self._L.append(item)
 
     def pop(self):
-        if not self.is_empty():
-            return self._L.pop(0)  
-        return None
+        if self.is_empty():
+            return None
+        return self._L.pop(0)  
+        
 
     def peek(self):
         if self.is_empty():
-            raise IndexError("You cannot peek into an empty stack")
+            return None
         return self._L[-1]
 
 
