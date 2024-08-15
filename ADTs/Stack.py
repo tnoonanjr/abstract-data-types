@@ -3,8 +3,8 @@ class Stack:
   The stack data type is LIFO: last in, first out.
   
   Stacks initialize with two instance variables:
-        - An empty list in which items will be pushed.
-        - A private length variable that will be manually updated.
+    - An empty list in which items will be pushed.
+    - A private length variable that will be manually updated.
 
         
   The length method will simply return length of the instance variable.
