@@ -60,7 +60,7 @@ if __name__ == '__main__':
         print(f"pushing: {i}")
         q.push(i)
     print("Queue:", q._L)
-    print(f"Empty?: {q.is_empty()}")
+    print(f"Empty? {q.is_empty()}")
 
     print(f"pop: {q.pop()}")
     print(f"Updated Queue: {q._L}")
