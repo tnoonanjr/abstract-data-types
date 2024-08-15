@@ -3,12 +3,11 @@ class Deque:
     A Deque is a double-sided queue that can push and pop items from both sides.
 
     
-    Deques initialize with two instance variables:
+    Deques initialize with one instance variable:
         - An empty list in which items will be pushed.
-        - A private length variable that will be manually updated.
 
         
-    The length method will simply return the instance variable.
+    The length method will simply return length of the instance variable.
 
     
     To ensure the deque is not empty:
@@ -16,22 +15,20 @@ class Deque:
 
 
     To push to the **beginning** of the deque:
-        - Update the length.
         - Insert a new item at the front of the list.
     
         
     To push to the **end** of the deque:
-        - Update the length.
         - Insert a new item at the back of the list.
 
         
     To pop from the **beginning** of the deque:
-        - Update the length.
+        - If the deque is empty, return None. Otherwise:
         - Pop an item from the front of the list.
 
         
     To pop from the **end** of the deque:
-        - Update the length.
+        - If the deque is empty, return None. Otherwise:
         - Pop an item from the back of the list.
     
         
@@ -43,32 +40,26 @@ class Deque:
     '''
     def __init__(self):
         self._L = []
-        self._len = 0
     
     def __len__(self):
-        return self._len
+        return len(self._L)
     
     def is_empty(self):
         return len(self._L) == 0
     
     def push_front(self, item):
-        self._len += 1
         self._L.insert(0, item)
         
-    
     def push_last(self, item):
-        self._len += 1
         self._L.append(item)
     
     def pop_front(self):
         if not self.is_empty():
-            self._len -= 1
             return self._L.pop()
         return None
     
     def pop_last(self):
         if not self.is_empty():
-            self._len -= 1
             return self._L.pop(0)
         return None
     
