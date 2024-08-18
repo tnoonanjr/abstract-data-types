@@ -43,7 +43,7 @@ class Queue:
     
     def pop(self):
         if self.is_empty():
-            return IndexError("Cannot pop from empty Queue")
+            raise IndexError("Cannot pop from empty Queue")
         return self._L.pop(0)
           
     def peek(self):
@@ -66,4 +66,4 @@ if __name__ == '__main__':
     print(f"pop: {q.pop()}")
     print(f"Updated Queue: {q._L}")
     print(f"Peek: {q.peek()}")
-    print(f"Queue length: {q._len}")
+    print(f"Queue length: {len(q)}")
